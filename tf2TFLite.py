@@ -1,6 +1,6 @@
 import tensorflow as tf
 
-TF_PATH = './tensorflow/best_res18_CAECAM_bn_256_for_test'
+TF_PATH = './best'
 # Convert the model
 converter = tf.lite.TFLiteConverter.from_saved_model(TF_PATH) # path to the SavedModel directory
 # converter.target_spec.supported_ops = [ # 없으면 에러뜸
@@ -20,5 +20,5 @@ converter = tf.lite.TFLiteConverter.from_saved_model(TF_PATH) # path to the Save
 tflite_model = converter.convert()
 
 # TFLite model save
-with open('./TFLite/best_res18_CAECAM_bn_256_for_test.tflite', 'wb') as f:
+with open('./best', 'wb') as f:
   f.write(tflite_model)

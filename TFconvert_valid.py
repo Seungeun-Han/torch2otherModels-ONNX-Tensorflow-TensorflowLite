@@ -1,7 +1,6 @@
 import numpy as np
 import torch
 from networks.dml_csr_danet_res18_bn import DML_CSR
-# from networks.dml_csr_danet_res50_bn import DML_CSR
 import tensorflow as tf
 import cv2
 
@@ -9,9 +8,9 @@ def to_numpy(tensor):
     return tensor.detach().cpu().numpy() if tensor.requires_grad else tensor.cpu().numpy()
 
 # torch model pth
-TORCH_PATH = './snapshots/best_res18_CAECAM_bn_256_for_test.pth'
+TORCH_PATH = 'best.pth'
 # TF model pth
-PB_PATH = './tensorflow/best_res18_CAECAM_bn_256_for_test'
+PB_PATH = './best'
 batch_size = 1
 
 # 모델에 대한 입력값

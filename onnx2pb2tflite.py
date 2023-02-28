@@ -4,14 +4,15 @@ from onnx_tf.backend import prepare
 import onnx
 
 
-onnx_model = onnx.load('./onnx/best_resnet50_CAEtriCAMask_256_for_test.onnx')
+onnx_model = onnx.load('./best.onnx')
 
 tf_rep = prepare(onnx_model)
-print("준비끝")
-tf_rep.export_graph("./tensorflow/best_resnet50_CAEtriCAMask_256_for_test")
-print("pb변환끝")
 
-converter = tf.lite.TFLiteConverter.from_saved_model('./tensorflow/best_resnet50_CAEtriCAMask_256_for_test')
+# to tensorflow
+tf_rep.export_graph("./best")
+
+
+converter = tf.lite.TFLiteConverter.from_saved_model('./best')
 
 #
 # #tflite float32로 변환은 그냥 convert()만 하면 됨
@@ -30,4 +31,4 @@ converter = tf.lite.TFLiteConverter.from_saved_model('./tensorflow/best_resnet50
 
 
 tflite_model = converter.convert()
-open("./TFLite/best_resnet50_CAEtriCAMask_256_for_test.tflite", "wb").write(tflite_model)
+open("best.tflite", "wb").write(tflite_model)
