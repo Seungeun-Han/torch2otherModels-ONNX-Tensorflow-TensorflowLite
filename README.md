@@ -21,7 +21,7 @@ Run __pytorch2onnx.py__.
 
 #### Customize
 
-> If you want to convert your model, you have to import your model and set the appropriate shape of input.
+If you want to convert your model, you have to import your model and set the appropriate shape of input.
 
 <br>
 
