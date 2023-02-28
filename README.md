@@ -23,7 +23,7 @@ Run __pytorch2onnx.py__.
 
 > If you want to convert your model, you have to import your model and set the appropriate shape of input.
 
-<hr>
+<br>
 
 ### 2. ONNX -> Tensorflow
 Run __onnx2tf.py__.
