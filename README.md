@@ -10,6 +10,8 @@ If you want to convert pytorch to TFLite, to utilize the pretrained Deep Learnin
 
 To illustrate how to use this code, consider converting ResNet18 (PyTorch Model) as an example.
 
+<hr>
+
 ## How to use?
 
 ### 1. Pytorch -> ONNX
