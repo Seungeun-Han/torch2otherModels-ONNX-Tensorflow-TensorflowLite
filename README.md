@@ -21,3 +21,20 @@ If converting has no problem, you can see "The model is valid!".
 #### Customize
 
 If you want to convert your model, you have to import your model and set the appropriate shape of input.
+
+
+### 2. ONNX -> Tensorflow
+Run __onnx2tf.py__.
+
+
+#### Customize
+
+Modify the file path or name(Name_of_ONNX, Name_of_TF)
+
+
+### 3. Tensorflow -> TensorflowLite
+Run __tf2TFLite.py__.
+
+#### Customize
+
+Modify the file path or name(TF_PATH, TFLite_name)
