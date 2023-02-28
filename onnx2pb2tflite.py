@@ -4,15 +4,15 @@ from onnx_tf.backend import prepare
 import onnx
 
 
-onnx_model = onnx.load('./best.onnx')
+onnx_model = onnx.load('./resnet50.onnx')
 
 tf_rep = prepare(onnx_model)
 
 # to tensorflow
-tf_rep.export_graph("./best")
+tf_rep.export_graph("./resnet50")
 
 
-converter = tf.lite.TFLiteConverter.from_saved_model('./best')
+converter = tf.lite.TFLiteConverter.from_saved_model('./resnet50')
 
 #
 # #tflite float32로 변환은 그냥 convert()만 하면 됨
@@ -24,11 +24,8 @@ converter = tf.lite.TFLiteConverter.from_saved_model('./best')
 #
 # #tflite dynamic으로 변환
 # converter.optimizations = [tf.lite.Optimize.DEFAULT]
-#
-# #tflite int8은 데이터셋 필요해보임 아래 링크 참조
-# https://www.tensorflow.org/lite/performance/post_training_integer_quant
 
 
 
 tflite_model = converter.convert()
-open("best.tflite", "wb").write(tflite_model)
+open("resnet50.tflite", "wb").write(tflite_model)

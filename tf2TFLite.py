@@ -1,6 +1,8 @@
 import tensorflow as tf
 
-TF_PATH = './best'
+TF_PATH = './resnet50'
+TFLite_name = 'resnet50.tflite'
+
 # Convert the model
 converter = tf.lite.TFLiteConverter.from_saved_model(TF_PATH) # path to the SavedModel directory
 # converter.target_spec.supported_ops = [ # 없으면 에러뜸
@@ -20,5 +22,5 @@ converter = tf.lite.TFLiteConverter.from_saved_model(TF_PATH) # path to the Save
 tflite_model = converter.convert()
 
 # TFLite model save
-with open('./best', 'wb') as f:
+with open(TFLite_name, 'wb') as f:
   f.write(tflite_model)
