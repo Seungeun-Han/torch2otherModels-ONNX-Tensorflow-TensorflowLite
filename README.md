@@ -15,28 +15,32 @@ To illustrate how to use this code, consider converting ResNet18 (PyTorch Model)
 ### 1. Pytorch -> ONNX
 Run __pytorch2onnx.py__.
 
->> If converting has no problem, you can see "The model is valid!".
+> If converting has no problem, you can see "The model is valid!".
 
+<br>
 
 #### Customize
 
-If you want to convert your model, you have to import your model and set the appropriate shape of input.
+> If you want to convert your model, you have to import your model and set the appropriate shape of input.
 
-<br>
+<hr>
 
 ### 2. ONNX -> Tensorflow
 Run __onnx2tf.py__.
 
+<br>
 
 #### Customize
 
-Modify the file path or name(Name_of_ONNX, Name_of_TF)
+> Modify the file path or name(Name_of_ONNX, Name_of_TF)
 
 <br>
 
 ### 3. Tensorflow -> TensorflowLite
 Run __tf2TFLite.py__.
 
+<br>
+
 #### Customize
 
-Modify the file path or name(TF_PATH, TFLite_name)
+> Modify the file path or name(TF_PATH, TFLite_name)
